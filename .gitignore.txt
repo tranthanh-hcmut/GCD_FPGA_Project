@@ -1,0 +1,15 @@
+*.jou
+*.log
+*.str
+*.zip
+*.wdb
+*.vcd
+.Xil/
+xsim.dir/
+*.runs/
+*.cache/
+*.hw/
+*.ip_user_files/
+*.sim/
+Thumbs.db
+Desktop.ini

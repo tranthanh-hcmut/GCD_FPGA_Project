@@ -1,0 +1,11 @@
+Time resolution is 1 ps
+===== GCD EUCLID CHIA (N = 32) =====
+[PASS] Case A == B | GCD(48, 48) = 48 | Latency: 3 clk
+[PASS] Case B == 0 | GCD(25, 0) = 25 | Latency: 2 clk
+[PASS] Case A == 0 | GCD(0, 37) = 37 | Latency: 3 clk
+[PASS] Case Coprime Primes | GCD(17, 19) = 1 | Latency: 6 clk
+[PASS] Case Coprime Composites | GCD(35, 64) = 1 | Latency: 8 clk
+[PASS] Case Standard | GCD(15, 25) = 5 | Latency: 6 clk
+[FAIL] Case Max Bit Width | GCD(4294967295, 357913941) = 3 (Expected: 1) | Latency: 4 clk
+===== END =====
+$finish called at time : 605 ns : File "D:/workspace/GCD_project/GCD_project.srcs/sim_1/new/tb_gcd_div.v" Line 85

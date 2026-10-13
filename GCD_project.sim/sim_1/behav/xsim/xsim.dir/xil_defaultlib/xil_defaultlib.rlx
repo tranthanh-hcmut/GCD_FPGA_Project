@@ -1,0 +1,11 @@
+0.7
+2020.2
+Nov  8 2024
+22:36:57
+D:/workspace/GCD_project/GCD_project.sim/sim_1/behav/xsim/glbl.v,1724786425,verilog,,,,glbl,,,,,,,,
+D:/workspace/GCD_project/GCD_project.srcs/sim_1/new/tb_gcd_binary.v,1791690859,verilog,,,,tb_gcd_binary,,,,,,,,
+D:/workspace/GCD_project/GCD_project.srcs/sim_1/new/tb_gcd_div.v,1791691323,verilog,,,,tb_gcd_div,,,,,,,,
+D:/workspace/GCD_project/GCD_project.srcs/sim_1/new/tb_gcd_sub.v,1791685803,verilog,,,,tb_gcd_sub,,,,,,,,
+D:/workspace/GCD_project/GCD_project.srcs/sources_1/new/gcd_binary.v,1791690186,verilog,,D:/workspace/GCD_project/GCD_project.srcs/sim_1/new/tb_gcd_binary.v,,gcd_binary,,,,,,,,
+D:/workspace/GCD_project/GCD_project.srcs/sources_1/new/gcd_div.v,1791684721,verilog,,D:/workspace/GCD_project/GCD_project.srcs/sim_1/new/tb_gcd_div.v,,gcd_div,,,,,,,,
+D:/workspace/GCD_project/GCD_project.srcs/sources_1/new/gcd_sub.v,1791692738,verilog,,D:/workspace/GCD_project/GCD_project.srcs/sim_1/new/tb_gcd_sub.v,,gcd_sub,,,,,,,,
