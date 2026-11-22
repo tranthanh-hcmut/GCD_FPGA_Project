@@ -52,10 +52,10 @@ module tb_gcd_sub;
 
             // Kiểm tra kết quả tính toán
             if (result === expected_gcd) begin
-                $display("[PASS] %-25s | A = %-5d | B = %-5d | GCD = %-5d | Latency = %0d cycles",
+                $display("[PASS] %-25s | A = %-10d | B = %-10d | GCD = %-10d | Latency = %0d cycles",
                          test_name, test_a, test_b, result, latency_count);
             end else begin
-                $display("[FAIL] %-25s | A = %-5d | B = %-5d | Expected = %-5d | Got = %-5d",
+                $display("[FAIL] %-25s | A = %-10d | B = %-10d | Expected = %-10d | Got = %-10d",
                          test_name, test_a, test_b, expected_gcd, result);
             end
             @(posedge clk);
@@ -79,21 +79,44 @@ module tb_gcd_sub;
         $display("                      GCD_SUB (EUCLID TRU LIEN TIEP)                      ");
         $display("==========================================================================");
 
-        // 1. Các trường hợp biên (Corner cases)
-        run_test(32'd48,  32'd48,  32'd48, "Case A == B");
-        run_test(32'd25,  32'd0,   32'd25, "Case B == 0");
-        run_test(32'd0,   32'd37,  32'd37, "Case A == 0");
-
-        // 2. Các số nguyên tố cùng nhau (Coprime)
-        run_test(32'd17,  32'd19,  32'd1,  "Case Coprime Primes");
-        run_test(32'd35,  32'd64,  32'd1,  "Case Coprime Composites");
-
-        // 3. Trường hợp số học thông thường
-        run_test(32'd15, 32'd25, 32'd5, "Case Standard (15, 25)");
-        run_test(32'd100, 32'd25,  32'd25, "Case Boi So (100, 25)");
-
-        // 4. Trường hợp cho thấy độ trễ lớn đặc thù của phép trừ (Worst-case latency)
-        run_test(32'd1000, 32'd1,  32'd1,  "Case Skewed (1000, 1)");
+        // ---> VỊ TRÍ GẮN TESTCASE MỚI VÀO ĐÂY <---
+        if (N == 8) begin
+            // ===========================================================================
+            // N = 8 (13 directed test cases khop tap C++)
+            // ===========================================================================
+            run_test(8'd48,  8'd48,  8'd48,  "Case A == B");
+            run_test(8'd25,  8'd0,   8'd25,  "Case B == 0");
+            run_test(8'd0,   8'd37,  8'd37,  "Case A == 0");
+            run_test(8'd0,   8'd0,   8'd0,   "Case A == B == 0");
+            run_test(8'd17,  8'd19,  8'd1,   "Case Coprime primes");
+            run_test(8'd35,  8'd64,  8'd1,   "Case Coprime composites");
+            run_test(8'd252, 8'd105, 8'd21,  "Case Standard 252,105");
+            run_test(8'd15,  8'd25,  8'd5,   "Case Standard 15,25");
+            run_test(8'd100, 8'd25,  8'd25,  "Case Multiple");
+            run_test(8'd255, 8'd1,   8'd1,   "Case Max & 1 (worst sub)");
+            run_test(8'd255, 8'd255, 8'd255, "Case Max == Max");
+            run_test(8'd255, 8'd85,  8'd85,  "Case Max width, multiple");
+            run_test(8'd233, 8'd144, 8'd1,   "Case Fibonacci (worst div)");
+        end else begin
+            // ===========================================================================
+            // N = 32 (14 directed test cases khop tap C++)
+            // ===========================================================================
+            run_test(32'd48,         32'd48,         32'd48,         "Case A == B");
+            run_test(32'd25,         32'd0,          32'd25,         "Case B == 0");
+            run_test(32'd0,          32'd37,         32'd37,         "Case A == 0");
+            run_test(32'd0,          32'd0,          32'd0,          "Case A == B == 0");
+            run_test(32'd17,         32'd19,         32'd1,          "Case Coprime primes");
+            run_test(32'd35,         32'd64,         32'd1,          "Case Coprime composites");
+            run_test(32'd252,        32'd105,        32'd21,         "Case Standard 252,105");
+            run_test(32'd15,         32'd25,         32'd5,          "Case Standard 15,25");
+            run_test(32'd100,        32'd25,         32'd25,         "Case Multiple");
+            run_test(32'd1000,       32'd1,          32'd1,          "Case Skewed 1000,1");
+            run_test(32'hFFFFFFFF,   32'hFFFFFFFF,   32'hFFFFFFFF,   "Case Max == Max");
+            run_test(32'hFFFFFFFF,   32'h55555555,   32'h55555555,   "Case Max width, multiple");
+            run_test(32'd1836311903, 32'd1134903170, 32'd1,          "Case Fibonacci (worst div)");
+            run_test(32'hFFFFFFFF,   32'd357913941,  32'd3,          "Case Max width, gcd=3");
+        end
+        // -----------------------------------------
 
         #50;
         $display("==========================================================================");

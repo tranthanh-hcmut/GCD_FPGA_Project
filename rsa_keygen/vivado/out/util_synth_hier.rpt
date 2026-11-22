@@ -1,0 +1,48 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Sat Nov 14 09:30:16 2026
+| Host         : LAPTOP-O29OT42D running 64-bit major release  (build 9200)
+| Command      : report_utilization -hierarchical -file vivado/out/util_synth_hier.rpt
+| Design       : board_top
+| Device       : xc7z020clg400-1
+| Speed File   : -1
+| Design State : Synthesized
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++----------------+-------------+------------+------------+---------+------+------+--------+--------+------------+
+|    Instance    |    Module   | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | DSP Blocks |
++----------------+-------------+------------+------------+---------+------+------+--------+--------+------------+
+| board_top      |       (top) |       3256 |       3256 |       0 |    0 | 2810 |      0 |      0 |          0 |
+|   (board_top)  |       (top) |         13 |         13 |       0 |    0 |  161 |      0 |      0 |          0 |
+|   d0           |    debounce |         16 |         16 |       0 |    0 |   23 |      0 |      0 |          0 |
+|   d1           |  debounce_0 |         16 |         16 |       0 |    0 |   23 |      0 |      0 |          0 |
+|   d2           |  debounce_1 |         16 |         16 |       0 |    0 |   23 |      0 |      0 |          0 |
+|   u_kg         |  rsa_keygen |       3169 |       3169 |       0 |    0 | 2556 |      0 |      0 |          0 |
+|     (u_kg)     |  rsa_keygen |        919 |        919 |       0 |    0 |  966 |      0 |      0 |          0 |
+|     u_div      |  divmod_seq |        120 |        120 |       0 |    0 |  136 |      0 |      0 |          0 |
+|     u_gcd      |      gcd_ct |        394 |        394 |       0 |    0 |  110 |      0 |      0 |          0 |
+|     u_inv      |   modinv_ct |        717 |        717 |       0 |    0 |  380 |      0 |      0 |          0 |
+|     u_mul      |     mul_seq |        172 |        172 |       0 |    0 |  169 |      0 |      0 |          0 |
+|     u_mx       |      modexp |        438 |        438 |       0 |    0 |  523 |      0 |      0 |          0 |
+|       (u_mx)   |      modexp |        324 |        324 |       0 |    0 |  350 |      0 |      0 |          0 |
+|       u_mm     |     montmul |        114 |        114 |       0 |    0 |  173 |      0 |      0 |          0 |
+|     u_pg       |   prime_gen |        174 |        174 |       0 |    0 |  189 |      0 |      0 |          0 |
+|     u_trng     |    trng_top |        235 |        235 |       0 |    0 |   83 |      0 |      0 |          0 |
+|       (u_trng) |    trng_top |          5 |          5 |       0 |    0 |    7 |      0 |      0 |          0 |
+|       u_health | trng_health |        151 |        151 |       0 |    0 |   33 |      0 |      0 |          0 |
+|       u_post   |   trng_post |         51 |         51 |       0 |    0 |   39 |      0 |      0 |          0 |
+|       u_ro     |     trng_ro |         28 |         28 |       0 |    0 |    4 |      0 |      0 |          0 |
+|   u_tx         |     uart_tx |         26 |         26 |       0 |    0 |   24 |      0 |      0 |          0 |
++----------------+-------------+------------+------------+---------+------+------+--------+--------+------------+
+
+
