@@ -35,7 +35,7 @@ module tb_mul_div;
     initial begin
         #25 rst_n = 1;
         tmul(0, 5); tmul({N{1'b1}}, {N{1'b1}}); tmul(60127, 64453);
-        tdiv(65537 * 2989997009, 3875240952 % (1 << N)); tdiv(5, 7); tdiv({2*N{1'b1}}, 1);
+        tdiv(65537 * 2989997009, 32'd3875240952); tdiv(5, 7); tdiv({2*N{1'b1}}, 1);
         for (i = 0; i < 1000; i = i + 1) begin
             tmul($random, $random);
             tdiv({$random, $random}, $random | 1);
